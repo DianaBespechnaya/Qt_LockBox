@@ -24,7 +24,7 @@ void NewUser::on_pushButton_clicked()
 {
     try{
        string name = ui->login->text().toStdString();
-       string pswd = ui->password->text().toStdString();
+       string pswd = ui->password->text().toStdString(); //добавить ограничение на размер пароля
        string pswd_repeat = ui->repeat->text().toStdString();
        if ((name == "")||(pswd == ""))
            throw "enter the name of user and password!";
