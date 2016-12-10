@@ -156,8 +156,8 @@ void AddOrRead::on_GetFile_clicked()
                QString a(deshifr.c_str());
                out << a;
         }
-        file.remove();
-        delete SelectedPath;
+        //не обязательно удалять файл из хранилища, 
+        //возможно перемещение будет совершено с ошибкой и файл окажется потерянным
         file.close();
         OutFile.close();
     }
