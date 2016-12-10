@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete AOR;
-    delete newUser;
+    delete newUser; // MainWindow является родителем, можно не удалять
     delete ui;
 }
 
@@ -57,7 +57,7 @@ void MainWindow::on_LogIn_clicked()
         }
         fin.close();
         if (!find)
-            throw "Uncorrect login or password.";
+            throw "Uncorrect login or password.";// throw char*
 
         path a(lockbox.string()+"/"+name);
         if (!exists(a))
